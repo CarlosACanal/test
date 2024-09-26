@@ -1,0 +1,17 @@
+<form [formGroup]="form" (ngSubmit)="saveData()">
+
+    <label for="name" [ngClass]="{'invalid-input' : form.get('name')?.errors && form.get('name')?.touched}">Nome</label>
+    <input id="name" type="text" formControlName="name">
+
+    <label for="email"
+        [ngClass]="{'invalid-input' : form.get('email')?.errors && form.get('email')?.touched}">E-mail</label>
+    <input id="email" type="email" formControlName="email">
+
+    <!-- <input type="number" formControlName="age" [ngClass]="{'invalid-input' : form.get('age')?.errors}"> -->
+
+    <app-input type="number" formControlName="age" placeholder="Informe sua idade" label="Idade"></app-input>
+
+    <p>{{form.value | json}}</p>
+
+    <button type="submit">Enviar</button>
+</form>
