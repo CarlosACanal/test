@@ -11,7 +11,52 @@
 
     <app-input type="number" formControlName="age" placeholder="Informe sua idade" label="Idade"></app-input>
 
+    <div formGroupName="address">
+        <input type="text" formControlName="street">
+    </div>
+
+
     <p>{{form.value | json}}</p>
+
+    <div *ngFor="let fruit of fruits" style="gap: 10px; display: flex;">
+        <app-card [text]="fruit"></app-card>
+    </div>
+
+    <p appHighLight>{{'teste de pipe' | space}}</p>
 
     <button type="submit">Enviar</button>
 </form>
+
+
+<input type="text" name="" id="" [(ngModel)]="ngModelTxt">
+
+<p>{{ngModelTxt}}</p>
+
+<app-card [text]="ngModelTxt" (txtEmitter)="cardText($event)"></app-card>
+
+<table>
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Idade</th>
+            <th>E-mail</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>2</td>
+            <td>dasdsa</td>
+            <td>dsadsa.com</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>dasdsa</td>
+            <td>dsadsa.com</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>dasdsa</td>
+            <td>dsadsa.com</td>
+        </tr>
+    </tbody>
+</table>
